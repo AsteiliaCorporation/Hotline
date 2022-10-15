@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Hotline.Views.ChatPage"
+             Title="ChatPage">
+    <ScrollView>
+        <VerticalStackLayout Spacing="3"
+                             Padding="16, 0">
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="#242424"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="#242424"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="#242424"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="#242424"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="#242424"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="DarkOliveGreen"
+                   HorizontalTextAlignment="End"
+                   Margin="0, 8"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="#242424"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="DarkOliveGreen"
+                   HorizontalTextAlignment="End"
+                   Margin="0, 8, 0, 0"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="DarkOliveGreen"
+                   HorizontalTextAlignment="End"
+                   Padding="8, 4"/>
+            <Label Text="{Binding Message.Text}"
+                   BackgroundColor="DarkOliveGreen"
+                   HorizontalTextAlignment="End"
+                   Padding="8, 4"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

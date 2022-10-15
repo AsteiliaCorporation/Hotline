@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Hotline.Models"
+             xmlns:viewmodel="clr-namespace:Hotline.ViewModels"
+             x:DataType="viewmodel:MainViewModel"
+             x:Class="Hotline.Views.MainPage"
+             Title="{Binding Title}">
+    <CollectionView ItemsSource="{Binding Messages}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate x:DataType="model:Message">
+                <HorizontalStackLayout Padding="16, 8"
+                                       Spacing="8">
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer CommandParameter="{Binding .}"
+                                              Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=GoToChatCommand}"/>
+                    </HorizontalStackLayout.GestureRecognizers>
+                    <Border WidthRequest="48"
+                            HeightRequest="48">
+                        <Label Text="S"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"/>
+                    </Border>
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="{Binding Sender}"
+                               FontAttributes="Bold"/>
+                        <Label Text="{Binding Text}"
+                               FontSize="12"
+                               MaximumWidthRequest="260"
+                               LineBreakMode="TailTruncation"/>
+                    </VerticalStackLayout>
+                    <VerticalStackLayout VerticalOptions="Center">
+                        <Label Text="4h"/>
+                        <Border WidthRequest="24"
+                                HeightRequest="24">
+                            <Label Text="s"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Border>
+                    </VerticalStackLayout>
+                </HorizontalStackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

@@ -1,4 +1,8 @@
-﻿namespace Hotline;
+﻿using Hotline.Services;
+using Hotline.ViewModels;
+using Hotline.Views;
+
+namespace Hotline;
 
 public static class MauiProgram
 {
@@ -13,6 +17,12 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-		return builder.Build();
+		builder.Services.AddSingleton<MessageService>();
+		builder.Services.AddSingleton<MainViewModel>();
+		builder.Services.AddTransient<ChatViewModel>();
+		builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddTransient<ChatPage>();
+
+        return builder.Build();
 	}
 }
